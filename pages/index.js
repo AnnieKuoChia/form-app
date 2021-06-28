@@ -1,39 +1,38 @@
-// import axios from "axios";
-import Header from "../components/header";
-import EndtimeForms from "../components/endtime";
-import NormalForms from "../components/normal";
-import Footer from "../components/footer";
+import axios from "axios";
+import Header from "../component/header";
+import EndtimeForms from "../component/endtime";
+import NormalForm from "../component/normal";
+import Footer from "../component/footer";
 
 export default function Home({
   endtimeForms,
-  res,
+  normalForms,
 }) {
-  
   console.log("endtimeForms", endtimeForms);
-  console.log("res", res);
-  
+  console.log("normalForms", normalForms);
   return (
     <div className="main">
       <Header />
       <section className="container gray">
-        <EndtimeForms />
+        <EndtimeForms endtimeForms={endtimeForms} />
       </section>
       <section className="container">
-        <NormalForms/>
+        <NormalForm normalForms={normalForms} />
       </section>
       <Footer />
     </div>
-  )
+  );
 }
 
-// export const getStaticProps = async () => {
-//   const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=endTime");
-//   const dataEndtime = res.data;
-
-//   return {
-//     props: {
-//       endtimeForms: dataEndtime,
-//       res: res
-//     },
-//   };
-// };
+export const getStaticProps = async () => {
+  const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=endTime");
+  const res2 = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal");
+  const dataEndtime = res.data;
+  const dataNormal = res2.data;
+  return {
+    props: {
+      endtimeForms: dataEndtime,
+      normalForms: dataNormal,
+    },
+  };
+};
