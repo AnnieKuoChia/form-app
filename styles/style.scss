@@ -36,7 +36,7 @@
     .iframe{
         width: fit-content;
         margin: 0 auto;
-        padding-top: 100px;
+        // padding-top: 100px;
     }
 }
 
@@ -154,11 +154,11 @@
             border: 2px solid #309F99;
             border-radius: 10px;
         }
-        input[name="form-name"]{
+        input[name="name"]{
             height: 30px;
             width: 100%;
         }
-        input[type="date"]{
+        input[name="endTime"]{
             height: 30px;
             display: inline-block;
         }
@@ -167,7 +167,7 @@
             border: 2px solid #309F99;
             border-radius: 10px;
         }
-        input[name="form-link"]{
+        input[name="link"]{
             height: 30px;
             width: 100%;
         }

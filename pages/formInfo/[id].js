@@ -1,6 +1,7 @@
 import Header from "../../component/header";
 import Footer from "../../component/footer";
 import axios from "axios";
+import Link from 'next/link'
 
 export const getStaticPaths = async () => {
     const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal");
@@ -27,7 +28,7 @@ export const getStaticProps = async (form) => {
     };
 };
 
-const Forms = ({normalForms}) => {
+const Details = ({normalForms}) => {
     console.log("normalForms", normalForms);
     return(
         <div className="main">
@@ -35,14 +36,17 @@ const Forms = ({normalForms}) => {
             <div className="section gray">
                 <div className="infoArea">
                     <h4 className="formName">{normalForms[0].name}</h4>
-                    <div className="iframe">
-                        <iframe src={normalForms[0].link} width='640' height='600' frameBorder='0' marginHeight='0' marginWidth='0'>載入中…</iframe>
-                    </div>
+                    <p className="dateString">上傳日：{normalForms[0].startTime}</p>
+                    <p className="dateString">到期日：{normalForms[0].endTime}</p>
+                    <p className="formInfo">{normalForms[0].info}</p>
                 </div>
+                <Link href={'/forms/' + normalForms[0].id} key={normalForms[0].id}>
+                    <div className="btn">填寫問卷</div>
+                </Link>
             </div>
             <Footer />
         </div>
     );
 }
 
-export default Forms;
+export default Details;

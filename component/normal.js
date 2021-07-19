@@ -7,7 +7,7 @@ const NormalForm = ({ normalForms }) => {
             <h2 className="title">最新發佈</h2>
             <div className="FormsArea">
                 {normalForms.map((normalForm, id) => (
-                    <Link href={'/forms/' + normalForm.id} key={normalForm.id}>
+                    <Link href={'/formInfo/' + normalForm.id} key={normalForm.id}>
                         <div className="FormCard">
                             <h4 className="formName">{normalForm.name}</h4>
                             <p className="dateString">{normalForm.startTime}</p>
