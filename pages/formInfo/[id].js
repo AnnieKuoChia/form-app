@@ -4,7 +4,9 @@ import axios from "axios";
 import Link from 'next/link'
 
 export const getStaticPaths = async () => {
-    const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal");
+    const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal", {
+        withCredentials: true,
+    });
     const dataNormal = res.data;
     const paths = dataNormal.map(form => {
         return {

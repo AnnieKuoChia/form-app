@@ -25,8 +25,12 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=endTime");
-  const res2 = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal");
+  const res = await axios.get("https://hopin.servehttp.com/api/getallform?sort=endTime", {
+    withCredentials: true,
+  });
+  const res2 = await axios.get("https://hopin.servehttp.com/api/getallform?sort=normal", {
+    withCredentials: true,
+  });
   const dataEndtime = res.data;
   const dataNormal = res2.data;
   return {

@@ -20,7 +20,6 @@ export default function Upload(){
         
         axios.post('https://hopin.servehttp.com/api/createform', data, {
             withCredentials: true,
-            headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
         }).then(res => {
             setName('');
             setInfo('');
