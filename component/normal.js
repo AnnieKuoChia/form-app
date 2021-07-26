@@ -17,7 +17,7 @@ const NormalForm = ({ normalForms }) => {
                     </Link>
                 ))}
             </div>
-            <div className="btn">load more</div>
+            {/* <div className="btn">load more</div> */}
         </div>
     );
 };
