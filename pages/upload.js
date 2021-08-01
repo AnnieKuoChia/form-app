@@ -25,7 +25,9 @@ export default function Upload(){
             setLink('');
             setEndTime('');
             try {
-                let r = res.data.success;
+                if(res.data.success == undefined){
+                    throw new Exception();
+                }
                 sweetAlert("成功", "問卷已成功上傳", "success");
             } catch (error) {
                 sweetAlert("失敗", res.data.status, "error");

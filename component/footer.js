@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
         <div className="footer">
-            <p>contact | xxx@gmail.com</p>
+            <p>contact | ismakrbio@gmail.com</p>
         </div>
     )
 }

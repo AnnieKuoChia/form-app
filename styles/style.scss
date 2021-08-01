@@ -73,6 +73,9 @@
             color: #2c2c2c;
             line-height: 30px;
             margin-bottom: 10px;
+            &:hover{
+                cursor: pointer;
+            }
             @media(max-width:768px){
                 font-size: 18px;
             }
@@ -172,6 +175,9 @@
     }
     .btn{
         display: block;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 
@@ -187,6 +193,9 @@
     font-size: 18px;
     border: 1px solid #209F99;
     border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .footer{
     width: 100%;
