@@ -2,6 +2,7 @@ import Header from "../component/header";
 import Footer from "../component/footer";
 import axios from 'axios';
 import React, { useState } from 'react';
+import sweetAlert from "sweetalert";
 
 export default function Upload(){
     const [name, setName] = useState('');
@@ -16,8 +17,6 @@ export default function Upload(){
           endTime: endTime,
           link: link,
         }
-        console.log('123');
-        
         axios.post('https://hopin.servehttp.com/api/createform', data, {
             withCredentials: true,
         }).then(res => {
@@ -25,6 +24,12 @@ export default function Upload(){
             setInfo('');
             setLink('');
             setEndTime('');
+            try {
+                let r = res.data.success;
+                sweetAlert("成功", "問卷已成功上傳", "success");
+            } catch (error) {
+                sweetAlert("失敗", res.data.status, "error");
+            }
         })
     }
     

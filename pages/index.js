@@ -13,9 +13,9 @@ export default function Home({
   return (
     <div className="main">
       <Header />
-      {/* <section className="container gray">
+      <section className="container gray">
         <EndtimeForms endtimeForms={endtimeForms} />
-      </section> */}
+      </section>
       <section className="container">
         <NormalForm normalForms={normalForms} />
       </section>
