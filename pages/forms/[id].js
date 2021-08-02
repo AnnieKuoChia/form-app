@@ -15,12 +15,15 @@ export const getStaticPaths = async () => {
     return {
         paths,
         fallback: false,
+        // 
     }
 };
 
 export const getStaticProps = async (form) => {
     const id = form.params.id;
-    const res = await axios.get("https://hopin.servehttp.com/api/getoneform/" + id);
+    const res = await axios.get("https://hopin.servehttp.com/api/getoneform/" + id, {
+        withCredentials: true,
+    });
     const data = res.data;
     return {
       props: {
